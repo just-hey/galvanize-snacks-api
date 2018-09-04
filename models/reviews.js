@@ -22,16 +22,16 @@ function create(snack_id, body) {
 		.returning(['*'])
 }
 
-function update(snack_id, id, body) {
+function update(id, body) {
 	return knex('reviews')
 		.where({ id })
 		.update( body )
 		.returning(['*'])  
 }
 
-function destroy(snack_id, id) {
+function destroy(id) {
 	return knex('reviews')
-		.where({ snack_id, id })
+		.where({ id })
 		.del()
 		.returning(['*'])
 }
