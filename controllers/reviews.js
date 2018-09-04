@@ -14,7 +14,7 @@ function update(req, res, next) {
 	isValidReviewPatch(req.body)	
 		.then(() => snack.getSnackById(req.params.id))
 		.then(() => review.getReviewById(req.params.revId))
-		.then(() => review.update(req.params.id, req.params.revId, req.body))
+		.then(() => review.update(req.params.revId, req.body))
 		.then(reviews => res.status(200).json({ data: reviews }))    
 		.catch(err => next(err)) 
 }
