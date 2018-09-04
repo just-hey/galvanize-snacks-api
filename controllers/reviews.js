@@ -22,7 +22,7 @@ function update(req, res, next) {
 function destroy(req, res, next) {
 	snack.getSnackById(req.params.id)
 		.then(() => review.getReviewById(req.params.revId))
-		.then(() => review.update(req.params.id, req.params.revId, req.body))
+		.then(() => review.destroy(req.params.revId))
 		.then(reviews => res.status(202).json({ data: reviews }))    
 		.catch(err => next(err)) 
 }
