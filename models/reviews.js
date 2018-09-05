@@ -18,7 +18,7 @@ function getReviewById(id) {
 
 function create(snack_id, body) {
 	return knex('reviews')
-		.insert({snack_id, ...body})
+		.insert({ snack_id, ...body })
 		.returning(['*'])
 }
 
