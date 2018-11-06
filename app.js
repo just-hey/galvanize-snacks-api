@@ -14,7 +14,7 @@ app.use(morgan('dev'))
 app.use(bodyParser.json())
 
 app.use('/api/snacks', snacksRoutes)
-app.use('/api/snacks/:id/reviews', reviewsRoutes)
+app.use('/api/snacks/:id/reviews', reviewsRoutes) 
 
 app.use((req, res) => {
   const status = 404
